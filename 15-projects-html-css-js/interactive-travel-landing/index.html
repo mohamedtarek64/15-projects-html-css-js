@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Travel Landing</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navigation" aria-label="Primary">
+      <a href="#" class="brand">Voyage Atlas</a>
+      <button class="navigation__toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <ul id="nav-menu" class="navigation__links">
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#stories">Travel Stories</a></li>
+        <li><a href="#newsletter">Join</a></li>
+      </ul>
+    </nav>
+    <div class="hero__content">
+      <p class="eyebrow">Tailored journeys for every wanderer</p>
+      <h1>Chart a Course to Your Next Adventure</h1>
+      <p>
+        Discover curated itineraries, boutique stays, and immersive experiences built
+        around how you love to travel. Choose a vibe, set the pace, and let Voyage Atlas
+        orchestrate the rest.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" data-action="start-planning">Start Planning</button>
+        <button class="btn btn--ghost" data-action="view-relief">See Travel Relief Guide</button>
+      </div>
+      <dl class="hero__stats">
+        <div>
+          <dt>Curated Journeys</dt>
+          <dd>280+</dd>
+        </div>
+        <div>
+          <dt>Traveler Satisfaction</dt>
+          <dd>97%</dd>
+        </div>
+        <div>
+          <dt>Local Hosts</dt>
+          <dd>320</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <main class="content">
+    <section id="destinations" class="panel panel--destinations">
+      <header>
+        <h2>Featured Destinations</h2>
+        <p>Filter by vibe to match your mood today.</p>
+      </header>
+      <div class="filters" role="tablist" aria-label="Destination vibe filters">
+        <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">
+          All
+        </button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="coastal">
+          Coastal Calm
+        </button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="culture">
+          Culture &amp; Cuisine
+        </button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="wellness">
+          Wellness Retreats
+        </button>
+        <button class="filter" role="tab" aria-selected="false" data-filter="thrill">
+          Thrill Seeker
+        </button>
+      </div>
+      <div class="destination-grid" role="list">
+        <!-- Cards injected via JavaScript -->
+      </div>
+    </section>
+
+    <section id="experiences" class="panel panel--experiences">
+      <header>
+        <h2>Signature Experiences</h2>
+        <p>Crafted with local tastemakers and guides on the ground.</p>
+      </header>
+      <ul class="experience-list">
+        <!-- Experiences rendered via JavaScript -->
+      </ul>
+    </section>
+
+    <section id="stories" class="panel panel--stories">
+      <header>
+        <h2>Traveler Stories</h2>
+        <p>
+          Notes from the road—handwritten reflections from the Voyage Atlas community.
+        </p>
+      </header>
+      <article class="story">
+        <blockquote>
+          “From hidden tea houses in Kyoto to private night kayaking in Halong Bay,
+          every detail mirrored how we love to travel—slow, intentional, and deeply
+          connected.”
+        </blockquote>
+        <footer>
+          <span class="avatar" aria-hidden="true">AV</span>
+          <div>
+            <strong>Amina &amp; Victor</strong>
+            <span>Nomadic designers · 42 days in Asia Pacific</span>
+          </div>
+        </footer>
+      </article>
+    </section>
+
+    <section id="newsletter" class="panel panel--newsletter">
+      <div class="newsletter__copy">
+        <h2>Travel Dispatch</h2>
+        <p>
+          A twice-monthly letter with shoulder-season secrets, limited stays, and
+          last-minute upgrades. No spam—ever.
+        </p>
+      </div>
+      <form class="newsletter__form" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          aria-describedby="newsletter-hint"
+          required
+        />
+        <button type="submit" class="btn btn--primary">Join Dispatch</button>
+        <p id="newsletter-hint" class="form-hint">We’ll send stories, not spam.</p>
+        <p class="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
