@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Tracker Dashboard</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="dashboard-header">
+    <div>
+      <p class="eyebrow">November 2025 · Week 46</p>
+      <h1>Hey, Jordan. Ready for today’s training?</h1>
+      <p>
+        You’re trending above your monthly goal streak. Keep an eye on mobility work to stay
+        balanced.
+      </p>
+    </div>
+    <div class="goal-card">
+      <p>Monthly Goal</p>
+      <strong>18 / 20 sessions</strong>
+      <div class="progress">
+        <span class="progress__value" style="--progress: 90%"></span>
+      </div>
+      <p class="goal-card__hint">Only 2 sessions away from unlocking the endurance badge.</p>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel metrics" aria-label="Daily metrics">
+      <header>
+        <h2>Today’s Snapshot</h2>
+        <p>Auto-synced from your watch at 07:42.</p>
+      </header>
+      <div class="metrics__grid">
+        <!-- Metrics rendered via JavaScript -->
+      </div>
+    </section>
+
+    <section class="panel activity" aria-label="Weekly activity minutes">
+      <header>
+        <h2>Active Minutes</h2>
+        <p>Focus remains on hybrid strength + cardio blocks.</p>
+      </header>
+      <div class="chart">
+        <!-- Chart bars injected via JavaScript -->
+      </div>
+      <footer class="activity__legend">
+        <span><span class="swatch swatch--strength"></span>Strength</span>
+        <span><span class="swatch swatch--conditioning"></span>Conditioning</span>
+        <span><span class="swatch swatch--mobility"></span>Mobility</span>
+      </footer>
+    </section>
+
+    <section class="panel workouts" aria-label="Recent sessions">
+      <header>
+        <h2>Recent Sessions</h2>
+        <p>Tap any to duplicate or build a variation.</p>
+      </header>
+      <ul class="workout-list">
+        <!-- Workouts rendered via JavaScript -->
+      </ul>
+    </section>
+
+    <section class="panel recovery" aria-label="Readiness">
+      <header>
+        <h2>Recovery &amp; Readiness</h2>
+      </header>
+      <div class="recovery__card recovery__card--sleep">
+        <h3>Sleep Depth</h3>
+        <p>7h 32m total · 92% efficiency</p>
+        <div class="rings" data-rings="sleep"></div>
+      </div>
+      <div class="recovery__card recovery__card--hrv">
+        <h3>HRV Trend</h3>
+        <p>Hijacking stress? Your rolling average is up +9 ms.</p>
+        <div class="sparkline" aria-hidden="true"></div>
+      </div>
+      <div class="recovery__card recovery__card--fuel">
+        <h3>Fuel Balance</h3>
+        <ul class="macros">
+          <!-- Macros injected via JavaScript -->
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
