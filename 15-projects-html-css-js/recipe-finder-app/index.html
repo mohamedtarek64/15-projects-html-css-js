@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Finder App</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Seasonal Table</p>
+      <h1>Find recipes that fit your time, pantry, and vibe.</h1>
+      <p>
+        Filter by dietary focus, cook time, or key ingredients. Save favorites and build a
+        weekend menu in minutes.
+      </p>
+    </div>
+    <form class="search" role="search">
+      <label class="sr-only" for="query">Search recipes</label>
+      <input
+        type="search"
+        id="query"
+        name="query"
+        placeholder="Search by ingredient, cuisine, or vibe..."
+        autocomplete="off"
+      />
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </header>
+
+  <main class="layout">
+    <section class="filters" aria-label="Recipe filters">
+      <h2>Filter</h2>
+      <div class="filter-group">
+        <h3>Cook Time</h3>
+        <div class="chip-list" id="time-filters" role="group" aria-label="Cook time filters">
+          <!-- Time filters rendered via JavaScript -->
+        </div>
+      </div>
+      <div class="filter-group">
+        <h3>Focus</h3>
+        <div class="chip-list" id="diet-filters" role="group" aria-label="Diet filters">
+          <!-- Diet filters rendered via JavaScript -->
+        </div>
+      </div>
+      <div class="filter-group favorites">
+        <h3>Favorites</h3>
+        <p>Drop recipes here to build your weekend menu.</p>
+        <ul class="favorites__list" aria-live="polite" aria-label="Saved recipes"></ul>
+      </div>
+    </section>
+
+    <section class="results" aria-live="polite">
+      <header class="results__header">
+        <h2><span id="results-count">0</span> recipes</h2>
+        <select id="sort" name="sort" aria-label="Sort results">
+          <option value="relevance">Sort by relevance</option>
+          <option value="time-asc">Shortest prep time</option>
+          <option value="rating-desc">Highest rating</option>
+        </select>
+      </header>
+      <ul class="recipe-list">
+        <!-- Recipe results rendered via JavaScript -->
+      </ul>
+    </section>
+
+    <aside class="drawer" aria-live="polite" aria-label="Recipe details">
+      <div class="drawer__header">
+        <h2 id="drawer-title">Select a recipe</h2>
+        <button type="button" class="drawer__close" aria-label="Close details">&times;</button>
+      </div>
+      <div class="drawer__content">
+        <p class="drawer__placeholder">
+          Browse the list to see ingredients, pantry swaps, and step-by-step guidance.
+        </p>
+      </div>
+    </aside>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
