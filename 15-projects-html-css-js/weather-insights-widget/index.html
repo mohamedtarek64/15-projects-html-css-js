@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Insights Widget</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="widget-header">
+    <div class="widget-header__copy">
+      <p class="eyebrow">Microclimate Watch · Cairo</p>
+      <h1>Track the next 5 days with actionable insights.</h1>
+      <p>
+        Compare feels-like vs. actual temperature, monitor air quality, and get hourly breakdowns
+        for your run, commute, or rooftop dinner.
+      </p>
+    </div>
+    <div class="summary-card">
+      <h2 id="summary-day">Today</h2>
+      <p class="summary-card__temp"><span id="summary-temp">29°</span><span>C</span></p>
+      <p id="summary-conditions">Clear sky with light breeze</p>
+      <div class="summary-card__meta">
+        <span>Feels: <strong id="summary-feels">27°</strong></span>
+        <span>Humidity: <strong id="summary-humidity">42%</strong></span>
+        <span>AQI: <strong id="summary-aqi">38</strong></span>
+      </div>
+      <button class="btn" id="unit-toggle" type="button" aria-pressed="false">
+        Switch to °F
+      </button>
+    </div>
+  </header>
+
+  <main class="widget">
+    <section class="panel panel--forecast" aria-label="Daily forecast">
+      <header class="panel__header">
+        <h2>5-day glance</h2>
+        <p>Tap a day to update the insights.</p>
+      </header>
+      <ul class="forecast-list">
+        <!-- Daily forecast inserted via JavaScript -->
+      </ul>
+    </section>
+
+    <section class="panel panel--hourly" aria-label="Hourly detail">
+      <header class="panel__header">
+        <h2>Hourly trajectory</h2>
+        <p id="hourly-summary">Today’s solar exposure peaks at 14:00.</p>
+      </header>
+      <div class="hourly-chart">
+        <!-- Hourly bars rendered via JavaScript -->
+      </div>
+    </section>
+
+    <section class="panel panel--insights" aria-label="Comfort insights">
+      <header class="panel__header">
+        <h2>Comfort Index</h2>
+      </header>
+      <div class="insight-grid">
+        <!-- Metrics injected via JavaScript -->
+      </div>
+    </section>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
