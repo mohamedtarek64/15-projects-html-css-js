@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Qur'an Recitation Studio</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__copy">
+      <p class="eyebrow">Tilawah Companion · Reflect &amp; Recite</p>
+      <h1>Immerse in curated Qur'an recitations with guided insights.</h1>
+      <p>
+        Explore verified reciters, follow along with translation cues, and queue the next surah for
+        a continuous listening journey.
+      </p>
+    </div>
+    <form class="masthead__search" role="search">
+      <label class="sr-only" for="library-search">Search recitations</label>
+      <input
+        type="search"
+        id="library-search"
+        name="library-search"
+        placeholder="Search surahs, reciters, or styles..."
+        aria-label="Search surahs, reciters, or styles"
+      />
+      <button type="submit">Go</button>
+    </form>
+  </header>
+
+  <main class="player-shell">
+    <section class="player-shell__main" aria-label="Current recitation">
+      <article class="now-playing">
+        <figure class="now-playing__artwork">
+          <img id="track-art" src="" alt="" />
+          <figcaption class="sr-only" id="artwork-caption"></figcaption>
+        </figure>
+        <div class="now-playing__meta">
+          <div class="meta__labels">
+            <span class="badge" id="track-album">Reciter</span>
+            <span class="badge badge--accent" id="track-mood">Style</span>
+          </div>
+          <h2 id="track-title">Surah Title</h2>
+          <p id="track-artist">Reciter • Surah</p>
+          <div class="meta__stats">
+            <p><strong>Verses</strong> <span id="track-energy">0</span></p>
+            <p><strong>Revelation</strong> <span id="track-release">—</span></p>
+          </div>
+        </div>
+      </article>
+
+      <section class="timeline" aria-label="Recitation progress">
+        <div class="timeline__times">
+          <span id="current-time">0:00</span>
+          <span id="track-duration">0:00</span>
+        </div>
+        <div class="timeline__bar" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="timeline__progress" id="progress-bar"></div>
+          <button class="timeline__handle" id="progress-handle" type="button" aria-label="Seek"></button>
+        </div>
+      </section>
+
+      <section class="transport" aria-label="Playback controls">
+        <div class="transport__cluster">
+          <button type="button" class="control control--ghost" id="shuffle-btn" aria-pressed="false">
+            <span aria-hidden="true">&#128256;</span>
+            <span class="sr-only">Toggle random surah</span>
+          </button>
+          <button type="button" class="control" id="prev-btn" aria-label="Previous surah">
+            &#9664;&#9664;
+          </button>
+          <button type="button" class="control control--primary" id="play-btn">
+            <span class="sr-only">Play/Pause</span>
+            &#9658;
+          </button>
+          <button type="button" class="control" id="next-btn" aria-label="Next surah">
+            &#9654;&#9654;
+          </button>
+          <button type="button" class="control control--ghost" id="repeat-btn" aria-pressed="false">
+            <span aria-hidden="true">&#128257;</span>
+            <span class="sr-only">Toggle repeat surah</span>
+          </button>
+        </div>
+        <div class="transport__volume">
+          <span aria-hidden="true">&#128266;</span>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.82"
+            id="volume-slider"
+            aria-label="Volume"
+          />
+        </div>
+      </section>
+
+      <section class="insights" aria-label="Listening insights">
+        <article class="insight-card">
+          <h3>Listening Tip</h3>
+          <p class="insight-card__value" id="transition-match">Tip</p>
+          <p>Focus on tajwīd guidance highlighted for this surah.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Upcoming Segment</h3>
+          <p class="insight-card__value" id="up-next-bpm">Surah</p>
+          <p>Queued verses aligned with current reciter and style.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Recitation Mode</h3>
+          <p class="insight-card__value" id="session-mood">Mode</p>
+          <p>Switch between murattal and mujawwad interpretations.</p>
+        </article>
+      </section>
+    </section>
+
+    <aside class="player-shell__sidebar" aria-label="Queue and alternative recitations">
+      <section class="queue">
+        <header class="queue__header">
+          <h2>Listening Queue</h2>
+          <button type="button" class="queue__clear" id="clear-queue">Clear</button>
+        </header>
+        <ul class="queue__list" id="queue-list">
+          <!-- Queue items rendered via JavaScript -->
+        </ul>
+      </section>
+
+      <section class="remixes">
+        <header>
+          <h2>Alternative Recitations</h2>
+          <p>Explore other qurrā’ matching today's selection.</p>
+        </header>
+        <ul class="remix-list" id="remix-list">
+          <!-- Remix suggestions rendered via JavaScript -->
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
