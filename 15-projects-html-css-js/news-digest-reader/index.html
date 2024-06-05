@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Digest Reader</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="brand-pill">DailyPulse</span>
+      <p class="eyebrow">Edition · November Digest</p>
+      <h1>Curated briefings to keep your team ahead.</h1>
+      <p class="masthead__lede">
+        Tailored stories by beat, region, and impact. Skim the highlights, then dive deeper with
+        expert analysis and saved follow-ups.
+      </p>
+    </div>
+    <div class="masthead__actions">
+      <form class="search" role="search">
+        <label class="sr-only" for="search-input">Search the digest</label>
+        <input
+          type="search"
+          id="search-input"
+          name="search"
+          placeholder="Search for a company, topic, or source..."
+          autocomplete="off"
+        />
+        <button type="submit">Find</button>
+      </form>
+      <div class="switcher" role="group" aria-label="Digest cadence">
+        <button class="switcher__btn is-active" data-cadence="morning">Morning Pulse</button>
+        <button class="switcher__btn" data-cadence="evening">Evening Wrap</button>
+      </div>
+      <p class="masthead__timestamp" id="digest-meta"></p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <article class="top-story" id="top-story" aria-label="Top story highlight"></article>
+
+      <section class="control-panel" aria-label="Story filters">
+        <div class="chip-group" id="topic-chips" role="tablist" aria-label="Topics"></div>
+        <div class="chip-group chip-group--ghost" id="region-chips" role="tablist" aria-label="Regions"></div>
+      </section>
+
+      <section class="story-feed" id="article-feed" aria-live="polite"></section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="briefing" aria-label="Executive briefing">
+        <header>
+          <h2>Executive Brief</h2>
+          <p>Essential signals across markets, policy, and technology.</p>
+        </header>
+        <dl class="briefing__list" id="briefing-list"></dl>
+      </section>
+
+      <section class="live-updates" aria-label="Live updates">
+        <header>
+          <h2>Live Desk</h2>
+          <p>Stream of notable moves and statements from the past 90 minutes.</p>
+        </header>
+        <ol class="live-updates__timeline" id="live-updates"></ol>
+      </section>
+
+      <section class="newsletter" aria-label="Newsletters">
+        <header>
+          <h2>Follow-up Letters</h2>
+          <p>Deep dives arriving in your inbox after market close.</p>
+        </header>
+        <ul class="newsletter__list" id="newsletter-list"></ul>
+      </section>
+
+      <section class="trending" aria-label="Trending topics">
+        <header>
+          <h2>Momentum Topics</h2>
+        </header>
+        <ul class="trending__tags" id="trending-tags"></ul>
+      </section>
+
+      <section class="saved" aria-label="Reading list">
+        <header>
+          <h2>Reading List</h2>
+          <p id="reading-count">No saved briefings yet.</p>
+        </header>
+        <ul class="saved__items" id="saved-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
