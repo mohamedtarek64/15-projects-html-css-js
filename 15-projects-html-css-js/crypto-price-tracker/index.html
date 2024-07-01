@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Price Tracker</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="brand-pill">ChainPulse</span>
+      <h1>Institutional-grade intel across digital assets.</h1>
+      <p>
+        Real-time spot prices, on-chain signals, and sector heat—optimised for desks that need
+        conviction in seconds.
+      </p>
+    </div>
+    <div class="masthead__tools">
+      <form class="search" role="search">
+        <label class="sr-only" for="asset-search">Search assets</label>
+        <input
+          type="search"
+          id="asset-search"
+          placeholder="Search by ticker, asset, or chain..."
+          autocomplete="off"
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div class="switcher" role="group" aria-label="Time horizon">
+        <button class="switcher__btn is-active" data-range="day">24h</button>
+        <button class="switcher__btn" data-range="week">7d</button>
+        <button class="switcher__btn" data-range="month">30d</button>
+      </div>
+      <p class="masthead__timestamp" id="market-meta"></p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <article class="market-overview" id="market-overview" aria-label="Market overview"></article>
+
+      <section class="filters" aria-label="Market filters">
+        <div class="chip-group" id="sector-chips" role="tablist" aria-label="Sector filters"></div>
+        <div class="chip-group chip-group--ghost" id="chain-chips" role="tablist" aria-label="Chain filters"></div>
+      </section>
+
+      <section class="asset-table" aria-label="Asset list">
+        <header class="asset-table__header">
+          <h2>Watchlist &amp; filtered assets</h2>
+          <div class="metric-caps">
+            <span id="asset-count"></span>
+            <span id="filter-meta"></span>
+          </div>
+        </header>
+        <div class="asset-table__body" id="asset-table"></div>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="portfolio" aria-label="Desk portfolio">
+        <header>
+          <h2>Desk Exposure</h2>
+          <p>Live positions aggregated across custody accounts.</p>
+        </header>
+        <div class="portfolio__metrics" id="portfolio-metrics"></div>
+        <ul class="portfolio__positions" id="portfolio-positions"></ul>
+      </section>
+
+      <section class="alerts" aria-label="Risk alerts">
+        <header>
+          <h2>Risk Scanner</h2>
+          <p>Real-time flags surfaced by compliance and risk models.</p>
+        </header>
+        <ul class="alerts__list" id="alerts-list"></ul>
+      </section>
+
+      <section class="news" aria-label="News & on-chain moves">
+        <header>
+          <h2>Moves to watch</h2>
+          <p>Top headlines and flows selected for the current horizon.</p>
+        </header>
+        <ul class="news__list" id="news-list"></ul>
+      </section>
+
+      <section class="dominance" aria-label="Dominance chart">
+        <header>
+          <h2>Market Share</h2>
+          <p>Share of total crypto market cap by sector.</p>
+        </header>
+        <ul class="dominance__list" id="dominance-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
