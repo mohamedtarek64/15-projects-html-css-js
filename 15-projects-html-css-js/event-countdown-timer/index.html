@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Countdown Timer</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__intro">
+      <span class="badge">Futureworks Summit</span>
+      <h1>Count down to the sessions that matter.</h1>
+      <p>
+        Global product, design, and engineering leaders gather in Singapore on <strong>March 27th</strong>.
+        Track every moment from the opening keynote to the nocturnal networking salon—automatically adjusted
+        to your timezone.
+      </p>
+      <div class="next-session">
+        <p class="next-session__label">Next up</p>
+        <h2 id="next-title">Loading…</h2>
+        <p class="next-session__meta" id="next-meta"></p>
+      </div>
+    </div>
+    <div class="countdown" role="timer" aria-live="assertive">
+      <div class="countdown__segment">
+        <span id="count-days">00</span>
+        <small>Days</small>
+      </div>
+      <div class="countdown__segment">
+        <span id="count-hours">00</span>
+        <small>Hours</small>
+      </div>
+      <div class="countdown__segment">
+        <span id="count-minutes">00</span>
+        <small>Minutes</small>
+      </div>
+      <div class="countdown__segment">
+        <span id="count-seconds">00</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="agenda">
+      <header class="agenda__header">
+        <h3>Summit Agenda</h3>
+        <p>Pick a session to pin and the countdown will instantly adjust.</p>
+      </header>
+      <ul class="agenda__list" id="agenda-list"></ul>
+    </section>
+
+    <aside class="sidebar">
+      <section class="timezone" aria-label="Timezone info">
+        <header>
+          <h3>Timezone</h3>
+          <p id="timezone-label">Detecting your location…</p>
+        </header>
+        <div class="timezone__clock">
+          <span id="local-time">--:--:--</span>
+          <small>Local time</small>
+        </div>
+        <div class="timezone__notice">
+          <p>
+            All session times convert automatically to your locale. The summit broadcasts from Singapore
+            (GMT+8).
+          </p>
+        </div>
+        <button type="button" class="btn btn-outline" id="reset-to-next">Reset to next session</button>
+      </section>
+
+      <section class="milestones" aria-label="Milestone timeline">
+        <header>
+          <h3>Key Milestones</h3>
+          <p>Behind-the-scenes checkpoints leading up to the summit.</p>
+        </header>
+        <ol class="milestones__list" id="milestones-list"></ol>
+      </section>
+
+      <section class="reminder" aria-label="Reminder signup">
+        <header>
+          <h3>Need reminders?</h3>
+          <p>Drop your email and we’ll nudge you 15 minutes before each live segment.</p>
+        </header>
+        <form class="reminder__form" id="reminder-form">
+          <label class="sr-only" for="reminder-email">Email address</label>
+          <input type="email" id="reminder-email" placeholder="you@company.com" required />
+          <button type="submit" class="btn btn-primary">Send reminders</button>
+          <p class="reminder__status" id="reminder-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
