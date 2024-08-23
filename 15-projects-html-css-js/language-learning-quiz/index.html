@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Learning Quiz</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__intro">
+      <span class="badge">polyglot studio</span>
+      <h1>Micro-drills that flex your memory and speaking muscles.</h1>
+      <p>
+        Choose a track, set the challenge mode, and chat your way to fluency. Each drill blends
+        listening, reading, and production with instant feedback designed by linguists.
+      </p>
+    </div>
+    <section class="streak" aria-label="Daily progress">
+      <p class="streak__label">Daily streak</p>
+      <p class="streak__count"><span id="streak-count">07</span> days</p>
+      <p class="streak__meta">Keep the streak to unlock longer conversational labs.</p>
+    </section>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <article class="quiz-card" aria-live="polite">
+        <header class="quiz-card__header">
+          <div>
+            <p class="quiz-card__track" id="track-label">Track: Day-to-day conversation</p>
+            <h2 id="prompt-title">Loading prompt…</h2>
+          </div>
+          <button class="btn btn-ghost" id="audio-btn" type="button" aria-live="polite">
+            ▶️ Replay audio
+          </button>
+        </header>
+
+        <div class="quiz-card__prompt">
+          <p id="prompt-text">Select a response below.</p>
+        </div>
+
+        <form class="quiz-card__options" id="options-form">
+          <!-- options injected via JavaScript -->
+        </form>
+
+        <div class="quiz-card__feedback" id="feedback" role="status" aria-live="polite"></div>
+
+        <footer class="quiz-card__footer">
+          <div class="progress" aria-label="Question progress">
+            <div class="progress__bar">
+              <span class="progress__value" id="progress-value" style="width: 0%;"></span>
+            </div>
+            <p class="progress__meta">
+              Question <span id="question-number">1</span> of <span id="question-total">5</span>
+            </p>
+          </div>
+          <button class="btn btn-primary" id="next-btn" type="button">Next challenge</button>
+        </footer>
+      </article>
+
+      <section class="transcript" aria-label="Session transcript">
+        <header>
+          <h3>Micro transcript</h3>
+          <p>Compare your picks against native samples and phonetic hints.</p>
+        </header>
+        <ul class="transcript__list" id="transcript-list"></ul>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="modes" aria-label="Mode selector">
+        <header>
+          <h3>Modes</h3>
+          <p>Mix challenge types to boost your recall muscle.</p>
+        </header>
+        <div class="mode-switcher" id="mode-switcher" role="tablist">
+          <button class="mode is-active" data-mode="listen">Listen &amp; choose</button>
+          <button class="mode" data-mode="type">Type from scratch</button>
+          <button class="mode" data-mode="shadow">Shadow &amp; compare</button>
+        </div>
+      </section>
+
+      <section class="tracks" aria-label="Learning tracks">
+        <header>
+          <h3>Tracks</h3>
+          <p>Swap themes to keep vocabulary sticky.</p>
+        </header>
+        <ul class="tracks__list" id="tracks-list"></ul>
+      </section>
+
+      <section class="metrics" aria-label="Performance metrics">
+        <header>
+          <h3>Live metrics</h3>
+        </header>
+        <ul class="metrics__grid" id="metrics-list"></ul>
+      </section>
+
+      <section class="tips" aria-label="Coach tips">
+        <header>
+          <h3>Coach tips</h3>
+        </header>
+        <ul class="tips__list" id="tips-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
