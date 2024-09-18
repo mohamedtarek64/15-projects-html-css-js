@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Budget Planner</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="brand-pill">Balance Studio</span>
+      <h1>Budget smarter. Live with intention.</h1>
+      <p>
+        Track cash flow, envelope categories, and upcoming bills with a planner that mirrors how you
+        really spend. See where every dollar is going before the month even begins.
+      </p>
+    </div>
+    <div class="masthead__meta">
+      <p id="dashboard-period">October 2025</p>
+      <p id="dashboard-updated">Last synced · 08:42</p>
+      <button type="button" class="btn btn-outline" id="sync-button">🔄 Refresh bank sync</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <section class="summary" aria-label="Summary cards">
+        <article class="summary-card" id="card-income">
+          <p>Planned income</p>
+          <strong id="income-total">$0</strong>
+          <span id="income-variance">--</span>
+        </article>
+        <article class="summary-card" id="card-expenses">
+          <p>Essential spend</p>
+          <strong id="expenses-total">$0</strong>
+          <span id="expenses-variance">--</span>
+        </article>
+        <article class="summary-card" id="card-savings">
+          <p>Savings &amp; goals</p>
+          <strong id="savings-total">$0</strong>
+          <span id="savings-variance">--</span>
+        </article>
+        <article class="summary-card summary-card--net" id="card-net">
+          <p>Net cash flow</p>
+          <strong id="net-total">$0</strong>
+          <span id="net-caption">Balanced</span>
+        </article>
+      </section>
+
+      <section class="cashflow" aria-label="Cashflow timeline">
+        <header>
+          <h2>Monthly cash flow</h2>
+          <p>Follow the inflows and outflows by week.</p>
+        </header>
+        <div class="cashflow__timeline" id="cashflow-bars"></div>
+      </section>
+
+      <section class="envelopes" aria-label="Budget envelopes">
+        <header>
+          <h2>Budget envelopes</h2>
+          <p>Keep essentials funded and reallocate as you go.</p>
+        </header>
+        <ul class="envelopes__list" id="envelopes-list"></ul>
+      </section>
+
+      <section class="transactions" aria-label="Recent transactions">
+        <header class="transactions__header">
+          <div>
+            <h2>Recent activity</h2>
+            <p>Automatic categorisation synced from your accounts.</p>
+          </div>
+          <div class="transactions__filters">
+            <label class="sr-only" for="filter-category">Filter category</label>
+            <select id="filter-category">
+              <option value="all">All categories</option>
+            </select>
+            <label class="sr-only" for="filter-type">Filter type</label>
+            <select id="filter-type">
+              <option value="all">All types</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+        </header>
+        <table class="transactions__table" id="transactions-table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col" class="align-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="savings" aria-label="Savings goals">
+        <header>
+          <h2>Savings goals</h2>
+          <p>Auto-transfers scheduled each payday.</p>
+        </header>
+        <ul class="savings__list" id="savings-list"></ul>
+      </section>
+
+      <section class="upcoming" aria-label="Upcoming bills">
+        <header>
+          <h2>Upcoming bills</h2>
+          <p>Five-day forecast across connected accounts.</p>
+        </header>
+        <ul class="upcoming__list" id="upcoming-list"></ul>
+      </section>
+
+      <section class="insights" aria-label="Spending insights">
+        <header>
+          <h2>Insights</h2>
+        </header>
+        <ul class="insights__list" id="insights-list"></ul>
+      </section>
+
+      <section class="notes" aria-label="Budget notes">
+        <header>
+          <h2>Budget notes</h2>
+        </header>
+        <textarea id="budget-notes" placeholder="Add reminders…"></textarea>
+        <p class="notes__hint" id="notes-status">Last saved just now.</p>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
