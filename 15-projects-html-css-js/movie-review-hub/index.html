@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Review Hub</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__copy">
+      <span class="brand-pill">reel insight</span>
+      <h1>Discover, track, and compare the films on your radar.</h1>
+      <p>
+        Curated highlights from critics, festival buzz, and your own watchlist in one cinematic hub.
+        Filter by genre, vibe, or critic score to plan the perfect movie night.
+      </p>
+      <div class="hero__actions">
+        <form class="search" role="search">
+          <label class="sr-only" for="search-film">Search films</label>
+          <input type="search" id="search-film" placeholder="Search by title, director, or festival…" autocomplete="off" />
+          <button type="submit">Find</button>
+        </form>
+        <div class="toggle-group" role="group" aria-label="Feed toggle">
+          <button class="toggle is-active" data-feed="curated">Curated</button>
+          <button class="toggle" data-feed="your-list">Your list</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero__feature" id="feature-highlight" aria-live="polite"></div>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <section class="filters" aria-label="Filters">
+        <div class="chip-group" id="genre-chips" role="tablist" aria-label="Genres"></div>
+        <div class="chip-group chip-group--ghost" id="mood-chips" role="tablist" aria-label="Mood filters"></div>
+        <div class="sorter">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="buzz">Festival buzz</option>
+            <option value="rating">Critic rating</option>
+            <option value="release">Release date</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Film grid">
+        <header class="grid__header">
+          <h2 id="grid-title">Highlights</h2>
+          <p id="grid-subtitle">Fresh out of festivals and critic roundups.</p>
+        </header>
+        <div class="grid__cards" id="film-grid"></div>
+      </section>
+
+      <section class="reviews" aria-label="Critic spotlight">
+        <header>
+          <h2>Critic spotlight</h2>
+          <p>Mini-reviews from writers whose taste you follow.</p>
+        </header>
+        <div class="reviews__list" id="reviews-list"></div>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="watchlist" aria-label="Watchlist">
+        <header>
+          <h3>Your watchlist</h3>
+          <p>Films you saved from the curated feed.</p>
+        </header>
+        <ul class="watchlist__list" id="watchlist"></ul>
+      </section>
+
+      <section class="box-office" aria-label="Box office trend">
+        <header>
+          <h3>Weekend box office</h3>
+          <p>North America · Preliminary numbers.</p>
+        </header>
+        <ul class="box-office__list" id="box-office"></ul>
+      </section>
+
+      <section class="calendar" aria-label="Festival calendar">
+        <header>
+          <h3>Festival calendar</h3>
+          <p>What’s premiering next.</p>
+        </header>
+        <ul class="calendar__list" id="festival-calendar"></ul>
+      </section>
+
+      <section class="newsletter" aria-label="Newsletter signup">
+        <header>
+          <h3>Stay in the loop</h3>
+          <p>Weekly digest with critics’ picks and streaming drops.</p>
+        </header>
+        <form class="newsletter__form" id="newsletter-form">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="you@example.com" required />
+          <button type="submit">Subscribe</button>
+          <p class="newsletter__status" id="newsletter-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
