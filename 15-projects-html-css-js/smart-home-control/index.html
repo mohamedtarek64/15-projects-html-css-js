@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Home Control</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__copy">
+      <span class="brand-pill">Aurora Home</span>
+      <h1>Orchestrate every device in every room.</h1>
+      <p>
+        Adaptive scenes, energy insights, and instant overrides—built for homes that think ahead.
+        Monitor temperature, security, and lighting in real time or automate your day with routines.
+      </p>
+    </div>
+    <div class="masthead__status">
+      <p>Home status</p>
+      <strong id="home-status">Secure · 22°C · 42% humidity</strong>
+      <span id="status-meta">Last sync 08:41 · 7 devices online</span>
+      <div class="status__actions">
+        <button type="button" class="btn btn-outline" id="scene-away">Activate Away scene</button>
+        <button type="button" class="btn btn-primary" id="scene-relax">Relax mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <section class="rooms" aria-label="Room overview">
+        <header>
+          <h2>Rooms</h2>
+          <p>Tap a room to adjust climate, lighting, and security.</p>
+        </header>
+        <div class="rooms__grid" id="rooms-grid"></div>
+      </section>
+
+      <section class="energy" aria-label="Energy usage">
+        <header>
+          <h2>Energy usage</h2>
+          <p>Track daily consumption versus targets.</p>
+        </header>
+        <div class="energy__chart" id="energy-bars"></div>
+      </section>
+
+      <section class="automation" aria-label="Automation routines">
+        <header class="automation__header">
+          <div>
+            <h2>Automation routines</h2>
+            <p>Granular control for your day-to-day flow.</p>
+          </div>
+          <button type="button" class="btn btn-outline" id="add-routine">+ New routine</button>
+        </header>
+        <ul class="automation__list" id="automation-list"></ul>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="devices" aria-label="Device controls">
+        <header>
+          <h3>Device controls</h3>
+          <p>Quick toggles for frequently used devices.</p>
+        </header>
+        <ul class="devices__list" id="devices-list"></ul>
+      </section>
+
+      <section class="security" aria-label="Security feed">
+        <header>
+          <h3>Security log</h3>
+          <p>Latest entries from locks and sensors.</p>
+        </header>
+        <ul class="security__list" id="security-list"></ul>
+      </section>
+
+      <section class="climate" aria-label="Climate overview">
+        <header>
+          <h3>Climate zones</h3>
+          <p>Zone comfort and air quality at a glance.</p>
+        </header>
+        <div class="climate__zones" id="climate-zones"></div>
+      </section>
+
+      <section class="alerts" aria-label="Alerts">
+        <header>
+          <h3>Alerts</h3>
+        </header>
+        <ul class="alerts__list" id="alerts-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
