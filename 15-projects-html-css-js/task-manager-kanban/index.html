@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager Kanban</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__brand">
+      <span class="brand-pill">Flowboard</span>
+      <h1>Shape your delivery rhythm.</h1>
+      <p>
+        Visualise sprint priorities, unblock dependencies, and coach your team with a kanban hub that
+        mirrors how modern squads ship work.
+      </p>
+      <div class="masthead__actions">
+        <button type="button" class="btn btn-primary" id="add-card">+ New card</button>
+        <button type="button" class="btn btn-outline" id="add-column">+ New column</button>
+      </div>
+    </div>
+    <div class="masthead__metrics">
+      <div>
+        <p>Sprint</p>
+        <strong id="sprint-name">Release 23.5</strong>
+      </div>
+      <div>
+        <p>Throughput (7d)</p>
+        <strong id="throughput">14 cards</strong>
+      </div>
+      <div>
+        <p>Focus ratio</p>
+        <strong id="focus-ratio">62% active</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="board" aria-label="Kanban board">
+    <div class="board__columns" id="board-columns"></div>
+  </main>
+
+  <aside class="sidebar">
+    <section class="summary" aria-label="Summary">
+      <header>
+        <h2>Team summary</h2>
+      </header>
+      <ul class="summary__list" id="summary-list"></ul>
+    </section>
+
+    <section class="activity" aria-label="Activity feed">
+      <header>
+        <h2>Activity</h2>
+        <p>Latest moves across the board.</p>
+      </header>
+      <ul class="activity__feed" id="activity-feed"></ul>
+    </section>
+
+    <section class="filters" aria-label="Workspace filters">
+      <header>
+        <h2>Filters</h2>
+      </header>
+      <div class="filters__group">
+        <label for="filter-owner">Owner</label>
+        <select id="filter-owner">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="filters__group">
+        <label for="filter-tag">Tag</label>
+        <select id="filter-tag">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-outline" id="clear-filters">Clear filters</button>
+    </section>
+  </aside>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
