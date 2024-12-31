@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoga Class Schedule</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__copy">
+      <span class="brand-pill">Studio Meraki</span>
+      <h1>Your weekly flow, curated.</h1>
+      <p>
+        From sunrise vinyasa to candlelit yin, all the classes, teachers, and playlists that keep you
+        grounded. Reserve a spot or join virtually with one tap.
+      </p>
+      <div class="hero__actions">
+        <button type="button" class="btn btn-primary" id="book-class">Book featured class</button>
+        <button type="button" class="btn btn-outline" id="view-membership">Membership options</button>
+      </div>
+    </div>
+    <aside class="hero__feature" id="featured-class" aria-live="polite"></aside>
+  </header>
+
+  <main class="layout">
+    <section class="layout__primary">
+      <section class="filters" aria-label="Schedule filters">
+        <div class="chip-group" id="style-chips" role="tablist" aria-label="Styles"></div>
+        <div class="chip-group chip-group--ghost" id="intensity-chips" role="tablist" aria-label="Intensity filters"></div>
+        <div class="schedule-switcher" role="group" aria-label="Schedule view">
+          <button class="toggle is-active" data-view="week">Week</button>
+          <button class="toggle" data-view="day">Today</button>
+        </div>
+      </section>
+
+      <section class="schedule" aria-label="Weekly schedule">
+        <header class="schedule__header">
+          <h2 id="schedule-title">Week of Oct 14 – Oct 20</h2>
+          <p id="schedule-meta">12 studio classes · 5 virtual broadcasts</p>
+        </header>
+        <div class="schedule__grid" id="schedule-grid"></div>
+      </section>
+
+      <section class="teachers" aria-label="Teacher roster">
+        <header>
+          <h2>Meet the guides</h2>
+          <p>Each teacher brings a different lineage and playlist energy.</p>
+        </header>
+        <ul class="teachers__list" id="teachers-list"></ul>
+      </section>
+    </section>
+
+    <aside class="layout__sidebar">
+      <section class="membership" aria-label="Membership">
+        <header>
+          <h3>Membership snapshots</h3>
+        </header>
+        <ul class="membership__list" id="membership-list"></ul>
+      </section>
+
+      <section class="stats" aria-label="Studio stats">
+        <header>
+          <h3>Studio stats</h3>
+        </header>
+        <ul class="stats__grid" id="stats-grid"></ul>
+      </section>
+
+      <section class="events" aria-label="Events">
+        <header>
+          <h3>Upcoming immersions</h3>
+          <p>Workshops and retreats you can add to your flow.</p>
+        </header>
+        <ul class="events__list" id="events-list"></ul>
+      </section>
+
+      <section class="waitlist" aria-label="Waitlist">
+        <header>
+          <h3>Join the waitlist</h3>
+          <p>Get a text when a mat opens up for fully booked classes.</p>
+        </header>
+        <form class="waitlist__form" id="waitlist-form">
+          <label class="sr-only" for="waitlist-name">Name</label>
+          <input type="text" id="waitlist-name" placeholder="Your name" required />
+          <label class="sr-only" for="waitlist-phone">Phone</label>
+          <input type="tel" id="waitlist-phone" placeholder="Mobile number" required />
+          <button type="submit" class="btn btn-primary">Join waitlist</button>
+          <p class="waitlist__status" id="waitlist-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
